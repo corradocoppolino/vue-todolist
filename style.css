@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    height: 95vh;
+    margin: 20px auto;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+/* LOGO */
+
+.logo{
+    text-align: center;
+}
+
+.logo img{
+    margin: 30px 0 0 0;
+    width: 300px;
+}
+
+/* INPUT */
+
+.inputTodo{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.inputTodo h4{
+    margin-bottom: 15px;
+    color: sandybrown;
+}
+
+.inputTodo input{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    width: 400px;
+}
+
+.inputTodo button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.containerTodo{
+    border-radius: 10px;
+    margin: 20px;
+    padding: 30px;
+    background-color: lightgray;
+}
+
+.containerTodo ul{
+    list-style: none;
+}
+
+.containerTodo ul li{
+    padding: 15px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    color: black;
+}
+
+.containerTodo ul li.last{
+    border: 0;
+}
+
+.containerTodo ul li.checked{
+    color: white;
+    text-decoration: line-through;
+}
+
+.containerTodo ul li i{
+    color: black;
+    float: right;
+    cursor: pointer;
+}
+
+.containerTodo ul li i:hover{
+    color: red;
+}
+
+.alert{
+    text-align: center;
+    color: sandybrown;
+}

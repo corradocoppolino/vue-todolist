@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>TO-DO-LIST</title>
+</head>
+<body>
+    
+    <div id="app" class="container">
+
+        <div class="logo">
+            <img src="immagini/boolean logo.png" alt="Boolean Logo">
+        </div>
+
+        <div class="inputTodo">
+            <h4 v-if="alertInputActive">Attenzione, il testo è troppo corto</h4>
+            <input @keyup.enter="addTodo" v-model="strTodo" type="text" placeholder="Inserisci attività da completare">
+            <button @click="addTodo">AGGIUNGI</button>
+        </div>
+
+        <div class="containerTodo">
+            <ul>
+                <li
+                    v-for="(element,index) in todos"
+                    :class="element.checked ? 'checked' : null"
+                    :style="(index === todos.length - 1) ? 'border:none' : null"
+                    @click="element.checked = !element.checked"
+                >
+                {{element.todo}}
+                <i 
+                    @click.stop="removeTodo(index)"
+                    class="fas fa-times"></i>
+                </li>
+            </ul>
+        </div>
+
+        <div class="alert">
+            <h4 v-if="alertContainerActive">Attenzione, prima devi aver completato l'azione!!</h4>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
